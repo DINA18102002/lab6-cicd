@@ -1,0 +1,15 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: cicd-pipeline
+description: GKE CI/CD Pipeline
+serialPipeline:
+  stages:
+  - targetId: gke-target
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: gke-target
+gke:
+  cluster: projects/theena-lab6/locations/asia-south1-a/clusters/cicd-gke

@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: cicd-app
+build:
+  artifacts:
+  - image: asia-south1-docker.pkg.dev/theena-lab6/cicd-repo/app
+deploy:
+  kubectl:
+    manifests:
+      - k8s/*.yaml
+
