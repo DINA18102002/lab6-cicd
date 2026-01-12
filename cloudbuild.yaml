@@ -3,13 +3,13 @@ steps:
   args:
     - build
     - '-t'
-    - 'asia-south1-docker.pkg.dev/$PROJECT_ID/cicd-repo/app:$SHORT_SHA'
+    - 'asia-south1-docker.pkg.dev/$PROJECT_ID/cicd-repo/app:$BUILD_ID'
     - '.'
 
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - push
-    - 'asia-south1-docker.pkg.dev/$PROJECT_ID/cicd-repo/app:$SHORT_SHA'
+    - 'asia-south1-docker.pkg.dev/$PROJECT_ID/cicd-repo/app:$BUILD_ID'
 
 images:
-- 'asia-south1-docker.pkg.dev/$PROJECT_ID/cicd-repo/app:$SHORT_SHA'
+- 'asia-south1-docker.pkg.dev/$PROJECT_ID/cicd-repo/app:$BUILD_ID'
